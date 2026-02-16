@@ -55,7 +55,7 @@ impl VaultContract {
 
         let updated_balance = checked_sub_balance(current_balance, amount)?;
 
-    transfer_out_of_vault(&env, &token, &user, amount);
+        transfer_out_of_vault(&env, &token, &user, amount);
         write_balance(&env, &user, updated_balance);
         emit_withdraw(&env, &user, amount, updated_balance);
 
