@@ -1,14 +1,5 @@
-use soroban_sdk::{contracttype, Address, Env};
-
-use crate::types::Balance;
-
-// Claves persistentes del contrato.
-#[derive(Clone)]
-#[contracttype]
-pub enum DataKey {
-    Balance(Address),
-    Token,
-}
+use soroban_sdk::{Address, Env};
+use crate::types::{Balance, DataKey};
 
 // Lee balance desde storage; devuelve 0 si no existe.
 pub fn read_balance(env: &Env, user: &Address) -> Balance {
